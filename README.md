@@ -107,9 +107,10 @@ This routine calls stoptheworld() internally and it block everything. So, please
 - 75%, 90%, 95% percentiles for response time
  
 
-In order to collect HTTP metrics, handler functions must be wrapped using WrapHTTPHandlerFunc:
+In order to collect HTTP metrics, collection must be enabled and handler functions must be wrapped using WrapHTTPHandlerFunc:
 
 ```go
+agent.CollectHTTPStat = true
 http.HandleFunc("/", agent.WrapHTTPHandlerFunc(handler))
 ```
 ### Tracing Metrics
